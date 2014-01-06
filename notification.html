@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<style>
+			body {
+				-webkit-app-region: no-drag;
+				padding:0;
+				margin:0;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+
+			#closer {
+				border-radius: 3px;
+				text-align: center;
+				position: fixed;
+				right: 7px;
+				top: 4px;
+				font-size: 9px;
+				padding: 3px;
+				z-index: 10;
+				-webkit-app-region: no-drag;
+			}
+
+			#closer:hover {
+				border: 1px solid #ccc;
+				cursor: pointer;
+			}
+
+			#wrapper {
+				width:298px;
+				height:98px;
+				border:1px solid black;
+			}
+
+			#div_icon {
+				width:64px;
+				float:left;
+				vertical-align: middle;
+				text-align: center;
+				background-color: #eeeeee;
+				height: 100%;
+			}
+
+			#div_icon img {
+				width:48px;
+				height:48px;
+				margin-top:26px;
+			}
+
+			#div_title {
+				margin-left:64px;
+				padding-left:5px;
+				font-size:14px;
+				font-weight:bold;
+				height:20px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			#div_message {
+				margin-left:64px;
+				padding-left:5px;
+				font-size:14px;
+				height:78px;
+				overflow-y: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<div id="closer">X</div>
+			<div id="div_icon">
+				<img src="images/desktop-notify.png" />
+			</div>
+			<div id="div_title">
+				TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle
+			</div>
+			<div id="div_message">
+				This is the notification messageThis is the notification message This is the notification message This is the notification message This is the notification message 
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link type="text/css" href="css/Aristo/Aristo.css" rel="stylesheet" />   
+		<link type="text/css" href="css/alertify.core.css" rel="stylesheet" />
+		<link type="text/css" href="css/alertify.bootstrap.css" rel="stylesheet" />
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+		<style>
+			.ui-front { z-index: 1000 !important; }
+		</style>
+
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery-ui-1.10.3.min.js"></script>
+		<script src="js/alertify.min.js"></script>
+		<script src="js/desktop-notification.js"></script>
+	</head>
+	
+	<body style="margin:0;padding:0">
+		<div id="loader" style="display:table;position:absolute;height:100%;width:100%;z-index:999;background-color:#ffffff">
+			<div style="display:table-cell;vertical-align:middle">
+				<div style="margin-left: auto; margin-right: auto; width:220px;text-align: center">
+					<span id="loader_text" style="font-size: 25px;font-family: 'helvetica neue', helvetica, arial;;vertical-align: middle;">Loading...</span><br/>
+					<img src="images/ajax_load_horizontal.gif" style="width:220px;height:19px;vertical-align:middle" />
+				</div>
+			</div>
+		</div>
+
+		<div id="tabs">
+			<ul>
+			</ul>
+		</div>
+
+
+		<div id="cryptsy_keys_form" title="Cryptsy keys" style="display:none">
+			<span id="cryptsy_keys_form_msg"></span><br/>
+		  	<form>
+				<fieldset>
+					<label for="public_key">Public key</label><br/>
+					<input type="text" name="public_key" id="public_key" value="" class="text ui-widget-content ui-corner-all" style="width:100%"><br/>
+				    <label for="private_key">Private key</label><br/>
+			    	<input type="text" name="private_key" id="private_key" value="" class="text ui-widget-content ui-corner-all" style="width:100%">
+				</fieldset>
+			</form>
+		</div>
+
+		<script src="js/ui.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

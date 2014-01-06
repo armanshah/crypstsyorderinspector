@@ -1,0 +1,14 @@
+{
+	"main": "index.html",
+	"name": "CryptsyOrderInspector",
+	"description": "Cryptsy order inspector",
+	"version": "0.1.0",
+	"keywords": [ "cryptsy", "order", "desktop", "notifications" ],
+	"window": {
+		"title": "Cryptsy Order Inspector",
+		"toolbar": true,
+		"frame": true,
+		"width": 1024,
+		"height": 768
+	}
+}
