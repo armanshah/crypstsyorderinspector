@@ -6,9 +6,12 @@
 	"keywords": [ "cryptsy", "order", "desktop", "notifications" ],
 	"window": {
 		"title": "Cryptsy Order Inspector",
-		"toolbar": true,
+		"toolbar": false,
 		"frame": true,
 		"width": 1024,
 		"height": 768
+	},
+	"dependencies" : {
+		"ejs" : ">=0.8.5"
 	}
 }
