@@ -23,7 +23,7 @@ That's it.
 
 The first time you run the app, you'll be asked for your public/private Cryptsy keys. These are needed in order to connect to Cryptsy through their API. You can find them on the Cryptsy site, by clicking on your username at the top right corner of the screen and selecting Settings. Scroll down to the section titled "API Keys". Enter anything for a seed value and press "Generate New Key". Then, copy and paste your public and private keys to Cryptsy Order Inspector.
 
-If you find this app useful, and you fill like donating some coins, my Cryptsy trade key is
+If you find this app useful, and you feel like donating some coins, my Cryptsy trade key is
 
     73c3f01f9d8a2ff26ec4604d884ff37386790075
 
