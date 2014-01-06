@@ -1,4 +1,5 @@
-## Cryptsy Order Inspector - Desktop notifications for Cryptsy
+Cryptsy Order Inspector - Desktop notifications for Cryptsy
+===========================================================
 
 A small app which keeps track of your orders and notifies you about new or missing (fulfilled/canceled) orders.
 
