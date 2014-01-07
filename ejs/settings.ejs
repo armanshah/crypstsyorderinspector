@@ -5,5 +5,9 @@
 		<input type="text" value="<%= settings.getPublicKey() %>" id="public_key" style="width:100%" /><br/>
 		<label for="private_key">Private key:</label><br/>
 		<input type="text" value="<%= settings.getPrivateKey() %>" id="private_key" style="width:100%" /><br/>
+		<label for="update_interval">Update interval (msec):</label><br/>
+		<input type="test" value="<%= settings.getUpdateInterval() %>" id="update_interval" /><br/>
+
+		<button id="save_settings">Save</button>
 	</fieldset>
 </div>

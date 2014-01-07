@@ -66,7 +66,7 @@ function initUI()
 {
 	setLoaderText("Initializing...");
 	initTabs();
-	initOpenOrdersTab();
+	initCryptsyOpenOrdersTab();
 	initSettingsTab();
 
 	updateOpenOrdersTab();
@@ -74,9 +74,9 @@ function initUI()
 	hideLoader();
 }
 
-function initOpenOrdersTab()
+function initCryptsyOpenOrdersTab()
 {
-	addTab("openorders", "Open Orders", ajax_load, false);
+	addTab("openorders", "Cryptsy Open Orders", ajax_load, false);
 	activateTab(0);
 }
 
@@ -85,6 +85,25 @@ function initSettingsTab()
 	addTab("settings", "Settings", ajax_load, false);
 	EJS.renderFile("ejs/settings.ejs", {settings: settings}, function (err, html) {
 		setTabHTML("settings", html);
+
+		$("#save_settings").button();
+		$("#save_settings").on("click", function () {
+			var publicKey = $("#public_key").val();
+			var privateKey = $("#private_key").val();
+			var updateInterval = $("#update_interval").val();
+
+			settings.setUpdateInterval(updateInterval);
+			settings.setKeys(publicKey, privateKey);
+			settings.save("settings.json", function (err) {
+				if(err)
+				{
+					alertify.error("Failed to save settings. Try again.");
+					return;
+				}
+
+				nwgui.Window.get().reload();
+			});
+		});
 	});
 }
 
