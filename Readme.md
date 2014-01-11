@@ -31,7 +31,7 @@ Thanks :)
 
 ### About ###
 
-This software uses [jQuery] [1], [jQuery UI] [2], [Aristo theme for jQuery UI] [3], [Alertify.js] [4] and [EJS] [5]. Desktop notifications inspired by [nw-desktop-notifications] [6]
+This software uses [jQuery] [1], [jQuery UI] [2], [Aristo theme for jQuery UI] [3], [Alertify.js] [4], [EJS] [5] and [moment.js] [10]. Desktop notifications inspired by [nw-desktop-notifications] [6]
 
 [1]: http://jquery.com/ "jQuery"
 [2]: http://jqueryui.com/ "jQuery UI"
@@ -42,3 +42,4 @@ This software uses [jQuery] [1], [jQuery UI] [2], [Aristo theme for jQuery UI] [
 [7]: https://github.com/rogerwang/node-webkit "node-webkit"
 [8]: http://nodejs.org/ "Node.js"
 [9]: https://github.com/rogerwang/node-webkit#downloads "Node-webkit downloads"
+[10]: http://momentjs.com/ "moment.js"
