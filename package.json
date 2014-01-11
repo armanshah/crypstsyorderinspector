@@ -2,7 +2,7 @@
 	"main": "index.html",
 	"name": "CryptsyOrderInspector",
 	"description": "Cryptsy order inspector",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"keywords": [ "cryptsy", "order", "desktop", "notifications" ],
 	"window": {
 		"title": "Cryptsy Order Inspector",
@@ -13,5 +13,6 @@
 	},
 	"dependencies" : {
 		"ejs" : ">=0.8.5"
+		"moment" : ">=2.5.0"
 	}
 }

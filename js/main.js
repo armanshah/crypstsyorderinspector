@@ -1,5 +1,6 @@
 var nwgui = require("nw.gui");
 var EJS = require("ejs");
+var moment = require("moment");
 var CryptsyAPI = require("cryptsy").CryptsyAPI;
 var Settings = require("settings").Settings;
 
@@ -116,35 +117,45 @@ function updateOpenOrdersTab()
 		return;
 	}
 
-	cryptsy.updateOpenOrders(function (err, orders) {
+	cryptsy.updateActiveMarkets(function (err, markets) {
 		if(err)
 		{
 			alertify.error(err);
 			return;
 		}
 
-		// Assign the corresponding market to each order...
-		for(var iOrder = 0;iOrder < orders.length;++iOrder)
-		{
-			orders[iOrder].market = cryptsy.getMarketWithID(orders[iOrder].marketid);
-			orders[iOrder].quantity += " "  + orders[iOrder].market.primary_currency_code;
-			orders[iOrder].total += " " + orders[iOrder].market.secondary_currency_code;
-		}
-
-		// Update the tabs html with the current orders.
-		EJS.renderFile("ejs/open_orders_table.ejs", {orders: orders}, function (err, html) {
-			setTabHTML("openorders", html);
-
-			// Check which orders have been added/removed.
-			if(past_orders != null)
+		cryptsy.updateOpenOrders(function (err, orders) {
+			if(err)
 			{
-				diffOrders(past_orders, orders, showNewOrderNotification);
-				diffOrders(orders, past_orders, showMissingOrderNotification);
+				alertify.error(err);
+				return;
 			}
-			past_orders = orders;
 
-			// Update again in X msecs
-			setTimeout(updateOpenOrdersTab, settings.getUpdateInterval());
+			// Assign the corresponding market to each order...
+			for(var iOrder = 0;iOrder < orders.length;++iOrder)
+			{
+				orders[iOrder].market = cryptsy.getMarketWithID(orders[iOrder].marketid);
+				orders[iOrder].quantity += " "  + orders[iOrder].market.primary_currency_code;
+				orders[iOrder].total += " " + orders[iOrder].market.secondary_currency_code;
+			}
+
+			// Update the tabs html with the current orders.
+			EJS.renderFile("ejs/open_orders_table.ejs", {orders: orders}, function (err, html) {
+				setTabHTML("openorders", html);
+
+				$("#server_time").html("Last update: " + moment().format("YYYY-MM-DD HH:mm:ss"));
+
+				// Check which orders have been added/removed.
+				if(past_orders != null)
+				{
+					diffOrders(past_orders, orders, showNewOrderNotification);
+					diffOrders(orders, past_orders, showMissingOrderNotification);
+				}
+				past_orders = orders;
+
+				// Update again in X msecs
+				setTimeout(updateOpenOrdersTab, settings.getUpdateInterval());
+			});
 		});
 	});
 }

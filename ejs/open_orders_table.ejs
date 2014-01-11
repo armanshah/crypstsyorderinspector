@@ -1,3 +1,4 @@
+<span id="server_time" style="margin-left:5px;font-size:14px">Server time:</span><br/>
 <h3 style="text-align:center">Open orders</h3>
 <table class="open_orders_table" style="margin:0 auto">
 	<thead>
@@ -9,6 +10,7 @@
 			<th>Quantity</th>
 			<th>Price</th>
 			<th>Total</th>
+			<th>Last trade</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +23,7 @@
 			<td style="text-align:right"><%= orders[iOrder].quantity %></td>
 			<td style="text-align:right"><%= orders[iOrder].price %></td>
 			<td style="text-align:right"><%= orders[iOrder].total %></td>
+			<td style="text-align:right"><%= orders[iOrder].market.last_trade %></td>
 		</tr>
 		<% } %>
 	</tbody>
